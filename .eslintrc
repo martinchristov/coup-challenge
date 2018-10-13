@@ -11,7 +11,8 @@
     "browser": true,
     "node": true,
     "mocha": true,
-    "es6": true
+    "es6": true,
+    "jest": true
   },
   "rules": {
     "space-before-function-paren": "off",
@@ -20,8 +21,24 @@
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "linebreak-style": "off",
     "global-require": "off",
-    "semi": "warn",
+    "semi": "off",
     "arrow-body-style": "off",
-    "no-multiple-empty-lines": ["warn", {"max": 1}]
+    "no-multiple-empty-lines": ["warn", {"max": 1}],
+    "comma-dangle": 0,
+    "no-extra-semi": 1,
+    "no-tabs": 0,
+    "indent": ["error", "tab"],
+    "react/jsx-indent": ["error", "tab"],
+    "react/jsx-indent-props": ["error", "tab"],
+    "jsx-a11y/anchor-is-valid": 0,
+    "react/destructuring-assignment": 0,
+    "react/no-access-state-in-setstate": 0,
+    "react/prop-types": 0,
+    "jsx-a11y/no-noninteractive-element-interactions": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "react/button-has-type": 0,
+    "no-unused-vars": "warn",
+    "react/no-array-index-key": "warn",
+    "jsx-quotes": "warn"
   }
 }

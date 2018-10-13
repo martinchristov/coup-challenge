@@ -42,11 +42,13 @@
     "react": "16.5.2",
     "react-dom": "16.5.2",
     "react-hot-loader": "4.3.11",
-    "react-router-dom": "4.3.0"
+    "react-router-dom": "4.3.0",
+    "react-table": "^6.8.6"
   },
   "devDependencies": {
     "@babel/cli": "7.1.1",
     "@babel/core": "^7.1.1",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-env": "7.1.0",
     "@babel/preset-react": "7.0.0",
     "@babel/preset-stage-2": "7.0.0",
@@ -71,6 +73,7 @@
     "file-loader": "1.1.11",
     "html-webpack-plugin": "3.2.0",
     "husky": "1.1.2",
+    "isomorphic-fetch": "^2.2.1",
     "jest": "23.6.0",
     "node-sass": "4.9.3",
     "open-browser-webpack-plugin": "0.0.5",
