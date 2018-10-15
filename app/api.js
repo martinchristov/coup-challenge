@@ -1,12 +1,25 @@
+import https from 'https'
+
 export default {
 	getScooters: () => {
-		const controller = new AbortController();
-		const { signal } = controller;
-		setTimeout(() => controller.abort(), 5000);
-		return new Promise((resolve) => {
-			fetch('https://qc05n0gp78.execute-api.eu-central-1.amazonaws.com/prod/scooters', { signal })
-				.then(d => d.json())
-				.then(resp => resolve(resp))
+		return new Promise((resolve, reject) => {
+			https.Server.timeout = 5000
+			https.get('https://qc05n0gp78.execute-api.eu-central-1.amazonaws.com/prod/scooters', (resp) => {
+				let data = '';
+				resp.on('data', (chunk) => {
+					data += chunk;
+				});
+				resp.on('end', () => {
+					try {
+						resolve(JSON.parse(data))
+					} catch (e) {
+						reject()
+					}
+				});
+			})
+				.on('error', () => {
+					reject()
+				})
 		})
 	}
 }
