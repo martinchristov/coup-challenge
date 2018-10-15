@@ -1,5 +1,5 @@
 export default {
-	getScooters: () => new Promise((resolve) => {
+	getScooters: jest.fn(() => new Promise((resolve) => {
 		resolve({
 			data: {
 				scooters: [
@@ -26,5 +26,5 @@ export default {
 				]
 			}
 		})
-	})
+	}))
 }

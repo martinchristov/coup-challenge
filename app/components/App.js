@@ -16,7 +16,11 @@ class App extends React.Component {
 
 	componentWillMount() {
 		this.fetchScooters()
-		setInterval(this.fetchScooters, 10000)
+		this.intid = setInterval(this.fetchScooters, 10000)
+	}
+
+	componentWillUnmount() {
+		clearInterval(this.intid)
 	}
 
 	fetchScooters = () => {

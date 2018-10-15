@@ -6,6 +6,7 @@ import api from '../../app/api'
 import App from '../../app/components/App'
 
 jest.mock('../../app/api')
+jest.useFakeTimers()
 
 configure({ adapter: new Adapter() });
 
@@ -16,10 +17,19 @@ describe('App Component', () => {
 		wrapper = shallow(<App />);
 	});
 
-	it('should exist', () => {
-		wrapper = shallow(<App />)
-		expect(wrapper).toBeTruthy()
-	});
+	test('refreshes data every 10 seconds', () => {
+		expect(api.getScooters).toHaveBeenCalledTimes(1)
+		jest.advanceTimersByTime(10000);
+		expect(api.getScooters).toHaveBeenCalledTimes(2)
+		wrapper.unmount()
+	})
+
+	test('clears interval', () => {
+		expect(api.getScooters).toHaveBeenCalledTimes(3)
+		wrapper.unmount()
+		jest.advanceTimersByTime(10000)
+		expect(api.getScooters).toHaveBeenCalledTimes(3)
+	})
 
 	test('should fetch scooters', async () => {
 		await api.getScooters().then((resp) => {
