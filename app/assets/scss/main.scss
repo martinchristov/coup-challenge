@@ -3,3 +3,23 @@ $color: #262828;
 body {
   color: $color;
 }
+
+.filters{
+  list-style: none;
+  display: flex;
+  li{
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+  }
+  .total{
+    padding-top: 45px;
+  }
+}
+
+.battery-range{
+  display: flex;
+  input{
+    width: 80px;
+  }
+}

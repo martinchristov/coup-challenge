@@ -39,6 +39,7 @@
     "react/button-has-type": 0,
     "no-unused-vars": "warn",
     "react/no-array-index-key": "warn",
-    "jsx-quotes": "warn"
+    "jsx-quotes": "warn",
+    "react/no-unused-state": "warn"
   }
 }
