@@ -1,7 +1,7 @@
 {
-  "name": "react-webpack-boilerplate",
-  "version": "2.1.0",
-  "description": "Minimalistic ES6 React boilerplate",
+  "name": "coup-challenge",
+  "version": "0.1.0",
+  "description": "a simple app that lists COUP scooters",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
@@ -17,7 +17,7 @@
     "webpack:prod": "webpack --config webpack.production.config.js --colors",
     "heroku-postbuild": "npm run production"
   },
-  "author": "Kliment Petrov <kleopetroff@gmail.com>",
+  "author": "Martin Christov <martin.christov@gmail.com>",
   "license": "MIT",
   "jest": {
     "setupFiles": [

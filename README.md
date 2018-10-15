@@ -1,3 +1,18 @@
+# COUP CHALLENGE
+
+a sample app that lists COUP scooters
+
+## features
+
+- filters by scooter model
+- filters battery range
+
+## tools
+
+- react-table is used to render the data as it is the most lightweight option
+- semantic-ui-react is used for UI elements
+- react-webpack-boilerplate is used to setup the environment. it's original readme is included below
+
 # ES6 React boilerplate using Webpack
 
 [![Travis](https://img.shields.io/travis/KleoPetroff/react-webpack-boilerplate/master.svg?style=flat-square)](https://github.com/KleoPetroff/react-webpack-boilerplate) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
