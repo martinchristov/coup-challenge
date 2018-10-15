@@ -21,8 +21,8 @@ describe('App Component', () => {
 		expect(wrapper).toBeTruthy()
 	});
 
-	test('should fetch scooters', () => {
-		api.getScooters().then((resp) => {
+	test('should fetch scooters', async () => {
+		await api.getScooters().then((resp) => {
 			const { scooters } = resp.data
 			expect(scooters.length).toBe(2)
 			expect(wrapper.instance().state.scooters).toEqual(scooters)
