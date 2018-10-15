@@ -16,7 +16,7 @@ class App extends React.Component {
 
 	componentWillMount() {
 		this.fetchScooters()
-		// setInterval(this.fetchScooters, 10000)
+		setInterval(this.fetchScooters, 10000)
 	}
 
 	fetchScooters = () => {
@@ -61,7 +61,6 @@ class App extends React.Component {
 							options={this.state.modelOptions}
 							value={this.state.filterModel}
 							onChange={(e, data) => {
-								console.log(e, data)
 								this.setState({
 									filterModel: data.value
 								})
