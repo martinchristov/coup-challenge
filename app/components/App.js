@@ -111,7 +111,7 @@ class App extends React.Component {
 						{
 							Header: 'Model',
 							id: 'model',
-							accessor: d => d.model
+							accessor: 'model'
 						},
 						{
 							Header: 'Distance',
