@@ -10,25 +10,22 @@ describe('api', () => {
 
 	test('fetches api', async () => {
 		await api.getScooters().then((d) => {
-			expect(d.data.scooters.length).toBe(0)
+			expect(d).toEqual({ data: { scooters: [] } })
 		})
 	})
 
-	test('handles error if not json', async () => {
+	test('handles error if not json', () => {
 		fetchMock.get(`${apiUrl}/prod/scooters`, 'raw text')
-		let error = false
-		await api.getScooters().then(() => {}, () => {
-			error = true
-		})
-		expect(error).toBe(true)
+		expect.assertions(1)
+		return api.getScooters().catch(err => expect(err.type).toBe('invalid-json'))
 	})
 
-	test('handles server error', async () => {
-		fetchMock.get(`${apiUrl}/prod/scooters`, 500, 'raw text')
-		let error = false
-		await api.getScooters().then(() => {}, () => {
-			error = true
+	test('handles server error', () => {
+		fetchMock.get(`${apiUrl}/prod/scooters`, 500, 'server error')
+		expect.assertions(1)
+		return api.getScooters().catch((err) => {
+			expect(err).toEqual(new Error('server error'))
 		})
-		expect(error).toBe(true)
+		// expect(api.getScooters).toThrow() WHY DOESN'T THIS WORK?!?!?!?
 	})
 })
